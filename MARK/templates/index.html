@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Mark Entry</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(to right, #36b9cc, #4e73df);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    width: 420px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.label {
+    font-weight: bold;
+    margin-top: 12px;
+    display: block;
+}
+
+.input-box {
+    width: 95%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.btn {
+    padding: 12px;
+    background: #1cc88a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.link-btn {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    background: #4e73df;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>Student Mark Entry</h2>
+
+<form method="POST" autocomplete="off">
+
+<label class="label">Student Name:</label>
+<input type="text" name="student_name" class="input-box"
+placeholder="Enter Student Name"
+value="{{ name if name else '' }}" autocomplete="off">
+
+<label class="label">Subject 1:</label>
+<input type="text" name="m1" class="input-box"
+placeholder="Tamil Marks"
+value="{{ m1 if m1 else '' }}" autocomplete="off">
+
+<label class="label">Subject 2:</label>
+<input type="text" name="m2" class="input-box"
+placeholder="English Marks"
+value="{{ m2 if m2 else '' }}" autocomplete="off">
+
+<label class="label">Subject 3:</label>
+<input type="text" name="m3" class="input-box"
+placeholder="Maths Marks"
+value="{{ m3 if m3 else '' }}" autocomplete="off">
+
+<label class="label">Subject 4:</label>
+<input type="text" name="m4" class="input-box"
+placeholder="Science Marks"
+value="{{ m4 if m4 else '' }}" autocomplete="off">
+
+<label class="label">Subject 5:</label>
+<input type="text" name="m5" class="input-box"
+placeholder="Social Marks"
+value="{{ m5 if m5 else '' }}" autocomplete="off">
+
+<button type="submit" class="btn">Calculate Result</button>
+
+</form>
+
+<a href="/students" class="link-btn">View Students</a>
+
+</div>
+
+</body>
+</html>

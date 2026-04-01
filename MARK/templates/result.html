@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Result</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(to right, #4e73df, #36b9cc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    width: 420px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th {
+    background: #4e73df;
+    color: white;
+    padding: 8px;
+}
+
+td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.result-box {
+    background: #1cc88a;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.performance {
+    margin-top: 8px;
+    color: #f6c23e;
+    font-weight: bold;
+}
+
+.btn {
+    padding: 10px 15px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 6px;
+    background: #4e73df;
+    color: white;
+    cursor: pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>📊 Result</h2>
+<p><b>Student Name:</b> {{ name }}</p>
+
+<table>
+<tr>
+<th>Subject</th>
+<th>Marks</th>
+</tr>
+
+<tr><td>Subject 1</td><td>{{ m1 }}</td></tr>
+<tr><td>Subject 2</td><td>{{ m2 }}</td></tr>
+<tr><td>Subject 3</td><td>{{ m3 }}</td></tr>
+<tr><td>Subject 4</td><td>{{ m4 }}</td></tr>
+<tr><td>Subject 5</td><td>{{ m5 }}</td></tr>
+</table>
+
+<p><b>Total Marks:</b> {{ total }}</p>
+<p><b>Percentage:</b> {{ percentage }}%</p>
+<p><b>Average Mark:</b> {{ average }}</p>
+<p><b>Grade:</b> {{ grade }}</p>
+
+<div class="result-box">RESULT: PASS</div>
+
+<div class="performance">
+{% if percentage >= 90 %}
+⭐ Outstanding Performance!
+{% elif percentage >= 75 %}
+👍 Very Good Performance!
+{% elif percentage >= 50 %}
+🙂 Good Performance!
+{% else %}
+⚠ Needs Improvement
+{% endif %}
+</div>
+
+<br>
+
+<a href="/resultcard"><button class="btn">Result Card</button></a>
+<a href="/report"><button class="btn">Report</button></a>
+<a href="/"><button class="btn">Back</button></a>
+
+</div>
+
+</body>
+</html>
